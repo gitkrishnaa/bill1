@@ -1,0 +1,23 @@
+.data-field-head{
+  background-color: blue;
+  width: 100vw;
+display: flex;
+justify-content: space-around;
+}
+.data-field-head>div{
+  background-color: blueviolet;
+  min-width: 20px;
+  max-width: 50px;
+}
+
+.data-field-data_div{
+  background-color: rgb(60, 255, 0);
+  width: 100vw;
+display: flex;
+justify-content: space-around;
+}
+.data-field-data_div>div{
+  background-color: blueviolet;
+  min-width: 20px;
+  max-width: 50px;
+}
