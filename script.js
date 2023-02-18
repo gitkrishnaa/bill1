@@ -11,6 +11,10 @@ const add_item_arr=[]
 add_item_1.addEventListener("click",()=>{
 let window1=document.createElement("div")
 
+//id 
+window1.id="window_popup1"
+
+
 body.appendChild(window1);
 window1.style.width="200px"
 window1.style.minheight="200px"
@@ -21,23 +25,26 @@ window1.style.top="30%";
 
 window1.style.left="40%";
 
-let close_button=document.createElement("button");
+let close_button=document.createElement("button");//0
 close_button.innerText="X"
 close_button.style.display="block"
 window1.appendChild(close_button);
 
 //input field in window1
-const front_image=document.createElement("input");
+const front_image=document.createElement("input");//
 front_image.setAttribute("type","file");
+front_image.id="front_image";
 
 const back_image=document.createElement("input");
-back_image.setAttribute("type","file")
+back_image.setAttribute("type","file");
+back_image.id="back_image"
 
-const details=document.createElement("input");
+const details=document.createElement("input");//5
+details.id="details"
 // select and option 
 const type = document.createElement("select");
   type.setAttribute("id", "mySelect");
-  
+console.log(type.value)
 
   var z = document.createElement("option");
   var t = document.createTextNode("22");
@@ -159,6 +166,10 @@ div_main.appendChild(div_making_charge);
 div_main.appendChild(div_add_on);
 div_main.appendChild(div_total);
     
+//window1 popup value to div data-field
+let data_window_popup1=document.getElementById("window_popup1")
+console.log(data_window_popup1.childNodes)
+
 
 
 // after enter data remove popup window1
