@@ -178,17 +178,18 @@ div_main.appendChild(div_total);
 //window1 popup value to div data-field
 let data_window_popup1=document.getElementById("window_popup1")
 console.log(data_window_popup1.childNodes)
+const total_price=Math.floor(((weight.value)*5000)+((making.value*(weight.value)*5000)/100));
 
 div_no.innerText=add_item_arr.length+1
-add_item_arr[add_item_arr.length]=weight.value
+add_item_arr[add_item_arr.length]=total_price
 console.log(add_item_arr)
 div_details.innerText=details.value
 div_type.innerText=type.value
 div_weight.innerText=weight.value
 div_price.innerText=(weight.value)*5000
-div_making_charge.innerText=Math.floor((making.value*(weight.value)*5000)/100) 
+div_making_charge.innerText=Math.floor((making.value*(weight.value)*5000)/100); 
 div_add_on.innerText=making.value
-div_total.innerText=((weight.value)*5000)+((making.value*(weight.value)*5000)/100)
+div_total.innerText=total_price
 
  //image part in data field
  const div_main_image=document.createElement("div");
