@@ -216,20 +216,20 @@ div_total.innerText=total_price
  image_div.style.alignItems="center";
 
 
- image_div.style.backgroundColor="yellow"
+//  image_div.style.backgroundColor="yellow"
 
  image_div_front.style.width="45%"
  image_div_front.style.height="90%"
-image_div_front.style.backgroundColor="gold"
+// image_div_front.style.backgroundColor="gold"
 
 
  image_div_back.style.width="45%"
  image_div_back.style.height="90%"
- image_div_back.style.backgroundColor="gold"
+//  image_div_back.style.backgroundColor="gold"
 
-div_main_image.style.width="11.5cm"
-div_main_image.style.height="5.5cm"
-div_main_image.style.backgroundColor="white"
+div_main_image.style.width="11.4cm"
+div_main_image.style.height="5cm"
+// div_main_image.style.backgroundColor="white"
 
 
 
