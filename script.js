@@ -185,10 +185,10 @@ console.log(add_item_arr)
 div_details.innerText=details.value
 div_type.innerText=type.value
 div_weight.innerText=weight.value
-div_price.innerText=Math.floor((weight.value+0)*5000)
-div_making_charge.innerText=Math.floor((making.value*(weight.value+0)*5000)/100) 
+div_price.innerText=(weight.value)*5000
+div_making_charge.innerText=Math.floor((making.value*(weight.value)*5000)/100) 
 div_add_on.innerText=making.value
-div_total.innerText=((weight.value+0)*5000)+((making.value*(weight.value+0)*5000)/100)
+div_total.innerText=((weight.value)*5000)+((making.value*(weight.value)*5000)/100)
 
  //image part in data field
  const div_main_image=document.createElement("div");
