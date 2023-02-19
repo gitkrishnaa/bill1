@@ -194,39 +194,88 @@ div_total.innerText=((weight.value+0)*5000)+((making.value*(weight.value+0)*5000
  const div_main_image=document.createElement("div");
 
  const image_div=document.createElement("div");
+
  const image_div_front=document.createElement("div");
+ const image_div_front_img=document.createElement("img");
+ image_div_front.appendChild(image_div_front_img)
+ image_div_front_img.style.width="100%"
+ image_div_front_img.style.height="100%"
+
  const image_div_back=document.createElement("div");
- image_div.style.width="150px"
- image_div.style.height="70px"
+ const image_div_back_img=document.createElement("img");
+ image_div_back.appendChild(image_div_back_img)
+ image_div_back_img.style.width="100%"
+ image_div_back_img.style.height="100%"
+
+
+ image_div.style.width="100%"
+ image_div.style.height="100%"
  image_div.style.display="flex"
+ image_div.style.justifyContent="space-evenly";
+ image_div.style.alignItems="center";
+
+
  image_div.style.backgroundColor="yellow"
 
- image_div_front.style.width="70px"
- image_div_front.style.height="70px"
+ image_div_front.style.width="45%"
+ image_div_front.style.height="90%"
 image_div_front.style.backgroundColor="gold"
 
 
- image_div_back.style.width="70px"
- image_div_back.style.height="70px"
+ image_div_back.style.width="45%"
+ image_div_back.style.height="90%"
  image_div_back.style.backgroundColor="gold"
 
-div_main_image.style.width="12cm"
-div_main_image.style.height="100px"
+div_main_image.style.width="11.5cm"
+div_main_image.style.height="5.5cm"
 div_main_image.style.backgroundColor="white"
 
 
 
- const div_details_text=document.createElement("div");
- div_details_text.style.backgroundColor="grey"
- div_details_text.innerText="detail of item"
+//  const div_details_text=document.createElement("div");
+//  div_details_text.style.backgroundColor="grey"
+//  div_details_text.innerText="detail of item"
 
  image_div.appendChild(image_div_front);
  image_div.appendChild(image_div_back);
 
 div_main_image.appendChild(image_div);
-div_main_image.appendChild(div_details_text);
+// div_main_image.appendChild(div_details_text);
 
 div_details.appendChild(div_main_image)
+/// image showing part>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//note id for front_image->line- 36 front_image.id="front_image1";
+//note id for back_image--back_image.id="back_image1";
+
+//previe front variable name-image_div_front_img
+//previe back variable name-image_div_back_img
+
+//
+
+
+function image_display1(input,preview_div) {
+  var reader;
+
+  if (input.files && input.files[0]) {
+    reader = new FileReader();
+    reader.readAsDataURL(input.files[0])
+    reader.onload = function(e) {
+      preview_div.setAttribute('src', e.target.result);
+      console.log(e.target.result)
+    }
+
+
+  }
+
+}
+
+image_display1(front_image,image_div_front_img)
+image_display1(back_image,image_div_back_img)
+
+
+
+
+
 
 // after enter data remove popup window1
 window1.remove()
