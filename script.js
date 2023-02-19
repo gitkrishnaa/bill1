@@ -179,9 +179,9 @@ div_main.appendChild(div_total);
 let data_window_popup1=document.getElementById("window_popup1")
 console.log(data_window_popup1.childNodes)
 
-div_no.innerText=add_item_arr.length
-add_item_arr[add_item_arr.length-1]=weight.value
-
+div_no.innerText=add_item_arr.length+1
+add_item_arr[add_item_arr.length]=weight.value
+console.log(add_item_arr)
 div_details.innerText=details.value
 div_type.innerText=type.value
 div_weight.innerText=weight.value
