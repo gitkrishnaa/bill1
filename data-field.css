@@ -1,23 +1,121 @@
+body{
+  padding: 10px;
+}
 .data-field-head{
+  margin: px;
   background-color: blue;
-  width: 100vw;
+  width: 24.5cm;
+  height: 50px;
 display: flex;
-justify-content: space-around;
+justify-content: center;
 }
 .data-field-head>div{
+  background-color: rgb(43, 159, 226);
+  min-width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.data-field-head>div:nth-child(1){
+  background-color: rgb(86, 226, 43);
+  min-width: 1cm;
+}
+.data-field-head>div:nth-child(2){
+  background-color: rgb(226, 208, 43);
+  min-width: 11.5cm;
+}.data-field-head>div:nth-child(3){
+  background-color: rgb(65, 182, 218);
+  min-width: 1cm;
+}
+.data-field-head>div:nth-child(4){
+  background-color: rgb(43, 226, 125);
+  min-width: 2cm;
+}
+.data-field-head>div:nth-child(4){
+  background-color: rgb(205, 43, 226);
+  min-width: 2cm;
+}
+.data-field-head>div:nth-child(5){
+  background-color: rgb(226, 125, 43);
+  min-width: 2cm;
+}
+.data-field-head>div:nth-child(6){
+  background-color: rgb(43, 226, 73);
+  min-width: 2cm;
+}
+.data-field-head>div:nth-child(7){
   background-color: blueviolet;
-  min-width: 20px;
-  max-width: 50px;
+  min-width: 2cm;
+}
+.data-field-head>div:nth-child(8){
+  background-color: rgb(43, 107, 226);
+  min-width: 3cm;
 }
 
+/* data field  */
 .data-field-data_div{
   background-color: rgb(60, 255, 0);
-  width: 100vw;
+  width: 24.5cm;
 display: flex;
-justify-content: space-around;
+justify-content: center;
+border-top:1px solid black;
 }
 .data-field-data_div>div{
   background-color: blueviolet;
-  min-width: 20px;
-  max-width: 50px;
+  min-width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.data-field-data_div>div:nth-child(2){
+/* width: 400px; */
+background-color: aqua;
+display: block;
+}
+
+.data-field-data_div>div:nth-child(1){
+  background-color: rgb(86, 226, 43);
+  min-width: 1cm;
+}
+.data-field-data_div>div:nth-child(2){
+  background-color: rgb(226, 208, 43);
+  min-width: 11.5cm;
+}.data-field-data_div>div:nth-child(3){
+  background-color: rgb(65, 182, 218);
+  min-width: 1cm;
+}
+.data-field-data_div>div:nth-child(4){
+  background-color: rgb(43, 226, 125);
+  min-width: 2cm;
+}
+.data-field-data_div>div:nth-child(4){
+  background-color: rgb(205, 43, 226);
+  min-width: 2cm;
+}
+.data-field-data_div>div:nth-child(5){
+  background-color: rgb(226, 125, 43);
+  min-width: 2cm;
+}
+.data-field-data_div>div:nth-child(6){
+  background-color: rgb(43, 226, 73);
+  min-width: 2cm;
+}
+.data-field-data_div>div:nth-child(7){
+  background-color: blueviolet;
+  min-width: 2cm;
+}
+.data-field-data_div>div:nth-child(8){
+  background-color: rgb(43, 107, 226);
+  min-width: 3cm;
+}
+/* image part inside 2nd div */
+.data-field-data_div>div:nth-child(2)>div{
+  background-color: rgb(43, 226, 113);
+  border: 2px solid black;
+ 
+}
+.data-field-data_div>div:nth-child(2)>div>:nth-child(1)>div{
+  background-color: rgb(43, 226, 113);
+  border: 2px solid rgb(231, 20, 20);
+ 
 }

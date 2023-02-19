@@ -33,17 +33,18 @@ window1.appendChild(close_button);
 //input field in window1
 const front_image=document.createElement("input");//
 front_image.setAttribute("type","file");
-front_image.id="front_image";
+front_image.id="front_image1";
 
 const back_image=document.createElement("input");
 back_image.setAttribute("type","file");
-back_image.id="back_image"
+back_image.id="back_image1"
 
 const details=document.createElement("input");//5
-details.id="details"
+details.id="details1"
+
 // select and option 
 const type = document.createElement("select");
-  type.setAttribute("id", "mySelect");
+  type.setAttribute("id", "select1");
 console.log(type.value)
 
   var z = document.createElement("option");
@@ -60,8 +61,12 @@ type.appendChild(z1);
 type.appendChild(z2);
 
 const weight=document.createElement("input");
+weight.id="weight1"
+
 const making=document.createElement("input");
+making.id="making"
 const add_on=document.createElement("input");
+add_on.id="add_on1"
 
 const front_image_text=document.createElement("p");
 const back_image_text=document.createElement("p");
@@ -136,7 +141,12 @@ cancel1.addEventListener("click",()=>{
   }
   
   )
+
+
   save1.addEventListener("click",()=>{
+
+   
+
     const display=document.getElementById("display");
     // window1.style.visibility="hidden"
     const div_main=document.createElement("div")
@@ -146,7 +156,6 @@ div_main.className="data-field-data_div"
 
 
 const div_no=document.createElement("div")
-div_no.innerText="hello"
 const div_details=document.createElement("div")
 const div_type=document.createElement("div")
 const div_weight=document.createElement("div")
@@ -170,7 +179,54 @@ div_main.appendChild(div_total);
 let data_window_popup1=document.getElementById("window_popup1")
 console.log(data_window_popup1.childNodes)
 
+div_no.innerText=add_item_arr.length
+add_item_arr[add_item_arr.length-1]=weight.value
 
+div_details.innerText=details.value
+div_type.innerText=type.value
+div_weight.innerText=weight.value
+div_price.innerText=Math.floor((weight.value+0)*5000)
+div_making_charge.innerText=Math.floor((making.value*(weight.value+0)*5000)/100) 
+div_add_on.innerText=making.value
+div_total.innerText=((weight.value+0)*5000)+((making.value*(weight.value+0)*5000)/100)
+
+ //image part in data field
+ const div_main_image=document.createElement("div");
+
+ const image_div=document.createElement("div");
+ const image_div_front=document.createElement("div");
+ const image_div_back=document.createElement("div");
+ image_div.style.width="150px"
+ image_div.style.height="70px"
+ image_div.style.display="flex"
+ image_div.style.backgroundColor="yellow"
+
+ image_div_front.style.width="70px"
+ image_div_front.style.height="70px"
+image_div_front.style.backgroundColor="gold"
+
+
+ image_div_back.style.width="70px"
+ image_div_back.style.height="70px"
+ image_div_back.style.backgroundColor="gold"
+
+div_main_image.style.width="12cm"
+div_main_image.style.height="100px"
+div_main_image.style.backgroundColor="white"
+
+
+
+ const div_details_text=document.createElement("div");
+ div_details_text.style.backgroundColor="grey"
+ div_details_text.innerText="detail of item"
+
+ image_div.appendChild(image_div_front);
+ image_div.appendChild(image_div_back);
+
+div_main_image.appendChild(image_div);
+div_main_image.appendChild(div_details_text);
+
+div_details.appendChild(div_main_image)
 
 // after enter data remove popup window1
 window1.remove()
