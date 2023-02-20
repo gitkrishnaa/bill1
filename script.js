@@ -5,8 +5,9 @@ let add_item_1 = document.getElementById('add-item-1');
 let body = document.querySelector('body');
 
 const add_item_arr = [];
-
+//popup part 1 ......................................................................
 // data entry window popup part creating
+
 add_item_1.addEventListener('click', () => {
   let window1 = document.createElement('div');
 
@@ -14,14 +15,14 @@ add_item_1.addEventListener('click', () => {
   window1.id = 'window_popup1';
 
   body.appendChild(window1);
-  window1.style.width = '200px';
-  window1.style.minheight = '200px';
+  // window1.style.width = '200px';
+  // window1.style.minheight = '200px';
   window1.style.position = 'fixed';
-  window1.style.backgroundColor = 'red';
+  // window1.style.backgroundColor = 'red';
 
-  window1.style.top = '30%';
+  // window1.style.top = '30%';
 
-  window1.style.left = '40%';
+  // window1.style.left = '40%';
 
   let close_button = document.createElement('button'); //0
   close_button.innerText = 'X';
@@ -74,13 +75,13 @@ add_item_1.addEventListener('click', () => {
   const making_text = document.createElement('p');
   const add_on_text = document.createElement('p');
 
-  front_image_text.innerText = 'front image';
-  back_image_text.innerText = 'back image';
-  details_text.innerText = 'details:';
-  type_text.innerText = 'type:';
-  weight_text.innerText = 'weight:';
-  making_text.innerText = 'making charge%:';
-  add_on_text.innerText = 'add on';
+  front_image_text.innerHTML = '<hr><p>front image</p>';
+  back_image_text.innerHTML = '<hr><p>back image</p>';
+  details_text.innerHTML = '<hr><p>details:</p>';
+  type_text.innerHTML = '<hr><p>type:</p>';
+  weight_text.innerHTML = '<hr><p>weight:</p>';
+  making_text.innerHTML = '<hr><p>making charge%:</p>';
+  add_on_text.innerHTML = '<hr><p>add on</p>';
 
   window1.appendChild(front_image_text);
   window1.appendChild(front_image);
@@ -127,8 +128,7 @@ add_item_1.addEventListener('click', () => {
     window1.remove();
   });
   // popup part>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  alert();
-  console.log(alert);
+ 
   save1.addEventListener('click', () => {
     const display = document.getElementById('display');
     // window1.style.visibility="hidden"
