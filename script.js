@@ -270,16 +270,37 @@ const amount_wt_X_rate=Math.floor((gold_rate_in_num* Number(weight.value))/10);
      div_making_charge.innerText=making_charge;
      div_add_on.innerText =amount_wt_X_rate//amount mean gold price without making charge
      div_total.innerText = total_price;
-//adding item total price into array to calculate all item
+
      add_item_arr[add_item_arr.length] = total_price;
 }
+//adding item total price into array to calculate all item------------------------
+const add_all_total_amount=document.getElementById("all_total_amount")
+    
 let temp_all_total_amount=0;
-const add_all_total_amount=add_item_arr.forEach((a)=>{
-  return temp_all_total_amount=temp_all_total_amount+a
+add_item_arr.forEach((a)=>{
+  // console.log(a+temp_all_total_amount,"argu")
+  temp_all_total_amount=temp_all_total_amount+a
  
 })
-console.log(add_all_total_amount,"total")
+add_all_total_amount.innerText=temp_all_total_amount
+console.log(temp_all_total_amount,"total")
 console.log(add_all_total_amount)
+//discount section
+const total_discount=document.getElementById("final_discount")
+total_discount.addEventListener("input",()=>{
+  const discount_in_num=Number(total_discount.value);
+  // const add_all_total_amount_in_num=Number(add_all_total_amount.innerText)
+if(discount_in_num>0){
+  add_all_total_amount.innerText=temp_all_total_amount-discount_in_num;
+}
+ else{
+  add_all_total_amount.innerText=temp_all_total_amount;
+
+ }
+
+})
+
+// ------------------------------------------------------------------------------------------------------
     let data_window_popup1 = document.getElementById('window_popup1');
     console.log(data_window_popup1.childNodes);
     // const total_price = Math.floor(
@@ -289,7 +310,7 @@ console.log(add_all_total_amount)
     //all item total amount calculate
 
 
-    div_no.innerText = add_item_arr.length + 1;
+    div_no.innerText = add_item_arr.length ;
    
     console.log(add_item_arr);
     div_details.innerText = details.value;
