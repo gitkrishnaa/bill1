@@ -1,5 +1,16 @@
 let add_item_1 = document.getElementById('add-item-1');
 
+// icritical info will stred in object so understand in future and easily debug it
+const info_bank={
+  gold_rate_daily_update_date_id_in_localstrorage:"gold_rate_update_date",
+  gold_rate_24k_id_localstorage:"Daily_gold_rate_24k",
+ discount_id_in_html:"final_discount",
+ all_total_amount_id_in_html:"all_total_amount",
+
+
+}
+const i=info_bank;
+
 // let display=document.getElementById("data-head");
 
 let body = document.querySelector('body');
@@ -19,18 +30,18 @@ const display_gold_rate_22k_span=document.getElementById("gold_rate_22k_span");
 
 const display_gold_rate_18k_span=document.getElementById("gold_rate_18k_span");
 
-if(localStorage.getItem("gold_rate_update_date")==undefined){
+if(localStorage.getItem("Daily_gold_rate_24k")==undefined){
   alert("pleas update daily gold rate")
 }
 else{
-  display_gold_rate_24k_span.innerText=Number()
-  display_gold_rate_22k_span.innerText="54000"
-  display_gold_rate_18k_span.innerText="54000" 
+  display_gold_rate_24k_span.innerText=Number(localStorage.getItem("Daily_gold_rate_24k"))
+  display_gold_rate_22k_span.innerText=Number(localStorage.getItem("Daily_gold_rate_24k"))*91.6/100
+  display_gold_rate_18k_span.innerText=Number(localStorage.getItem("Daily_gold_rate_24k"))*75/100
 }
 
 
 const todays_date=new Date()
-console.log(todays_date.getDate())
+console.log(todays_date.getDate());
 if(localStorage.getItem("gold_rate_update_date")!=todays_date.getDate()){
   alert("please update today's gold rate 10gm")
   console.log(localStorage.getItem("gold_rate_update_date"),todays_date.getDate())
@@ -58,6 +69,9 @@ gold_rate_24k_button.addEventListener("click",()=>{
         "18k":Math.floor(gold_rate_24k_number*75/100),
         }
         // console.log(gold_rate_24k_number)
+        display_gold_rate_24k_span.innerText=Number(localStorage.getItem("Daily_gold_rate_24k"))
+        display_gold_rate_22k_span.innerText=Math.floor(Number(localStorage.getItem("Daily_gold_rate_24k"))*91.6/100)
+        display_gold_rate_18k_span.innerText=Math.floor(Number(localStorage.getItem("Daily_gold_rate_24k"))*75/100)
   }
 
 })
@@ -220,30 +234,80 @@ add_item_1.addEventListener('click', () => {
     div_main.appendChild(div_total);
 
     //window1 popup value to div data-field
+// most imartant part*******************************************************************************
+// amount calculation
+//note - daily rate for gold is stored in local storage
+const display_gold_rate_24k_span=document.getElementById("gold_rate_24k_span");
+const display_gold_rate_22k_span=document.getElementById("gold_rate_22k_span");
+
+const display_gold_rate_18k_span=document.getElementById("gold_rate_18k_span");
+const gold_type=type.value;
+if(gold_type==24){
+  // div_add_on.innerText = Math.floor( weight.value *Number(display_gold_rate_24k_span.innerText));
+  Amount_calculator_based_on_karet(display_gold_rate_24k_span.innerText)
+}
+else if(gold_type==22){
+  // div_add_on.innerText = Math.floor( weight.value *Number(display_gold_rate_22k_span.innerText));
+  Amount_calculator_based_on_karet(display_gold_rate_22k_span.innerText)
+}
+else if(gold_type==20){
+  // div_add_on.innerText = Math.floor( weight.value *Number(display_gold_rate_22k_span.innerText));
+  Amount_calculator_based_on_karet(display_gold_rate_22k_span.innerText)
+}
+else if(gold_type==18){
+  // div_add_on.innerText = Math.floor( weight.value *Number(display_gold_rate_18k_span.innerText));
+  Amount_calculator_based_on_karet(display_gold_rate_18k_span.innerText)
+}
+function Amount_calculator_based_on_karet(gold_rate){
+  const gold_rate_in_num=Number(gold_rate)
+ const gold_rate_price=gold_rate_in_num;
+const making_charge= Math.floor((making.value*gold_rate_in_num/10*weight.value)/100)
+const amount_wt_X_rate=Math.floor((gold_rate_in_num* Number(weight.value))/10);
+
+  const total_price=making_charge+amount_wt_X_rate
+     //value in to html
+     div_price.innerText=Math.floor(gold_rate_price/10)+"/g";
+     div_making_charge.innerText=making_charge;
+     div_add_on.innerText =amount_wt_X_rate//amount mean gold price without making charge
+     div_total.innerText = total_price;
+//adding item total price into array to calculate all item
+     add_item_arr[add_item_arr.length] = total_price;
+}
+let temp_all_total_amount=0;
+const add_all_total_amount=add_item_arr.forEach((a)=>{
+  return temp_all_total_amount=temp_all_total_amount+a
+ 
+})
+console.log(add_all_total_amount,"total")
+console.log(add_all_total_amount)
     let data_window_popup1 = document.getElementById('window_popup1');
     console.log(data_window_popup1.childNodes);
-    const total_price = Math.floor(
-      weight.value * 5000 + (making.value * weight.value * 5000) / 100
-    );
+    // const total_price = Math.floor(
+    //   weight.value * 5000 + (making.value * weight.value * 5000) / 100
+    // );
+
+    //all item total amount calculate
+
 
     div_no.innerText = add_item_arr.length + 1;
-    add_item_arr[add_item_arr.length] = total_price;
+   
     console.log(add_item_arr);
     div_details.innerText = details.value;
     div_type.innerText = type.value;
-    div_weight.innerText = weight.value;
-
-
-    div_price.innerText =
+    div_weight.innerText = weight.value+"g";
+    // div_type.innerText = type.value;
 
     
-    div_making_charge.innerText = Math.floor(
-      (making.value * weight.value * 5000) / 100
-    );
-    div_add_on.innerText = Math.floor( weight.value * 5000);
-    div_total.innerText = total_price;
+
+    
+    // div_making_charge.innerText = Math.floor(
+    //   (making.value * weight.value * 5000) / 100
+    // );
+    // div_add_on.innerText = Math.floor( weight.value * 5000);
+    // div_total.innerText = total_price;
 
     //image part in data field
+    // ********************************************************************
     const div_main_image = document.createElement('div');
 
     const image_div = document.createElement('div');
