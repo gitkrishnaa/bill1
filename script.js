@@ -5,6 +5,68 @@ let add_item_1 = document.getElementById('add-item-1');
 let body = document.querySelector('body');
 
 const add_item_arr = [];
+const total_amount=[];
+
+
+
+//gold rate section (note gold rate will store in local storage)
+const gold_rate_24k_button=document.getElementById("update_gold_rate24k_button");
+const gold_rate_24k=document.getElementById("update_gold_rate24k");
+
+//gold rate update by localstorage
+const display_gold_rate_24k_span=document.getElementById("gold_rate_24k_span");
+const display_gold_rate_22k_span=document.getElementById("gold_rate_22k_span");
+
+const display_gold_rate_18k_span=document.getElementById("gold_rate_18k_span");
+
+if(localStorage.getItem("gold_rate_update_date")==undefined){
+  alert("pleas update daily gold rate")
+}
+else{
+  display_gold_rate_24k_span.innerText=Number()
+  display_gold_rate_22k_span.innerText="54000"
+  display_gold_rate_18k_span.innerText="54000" 
+}
+
+
+const todays_date=new Date()
+console.log(todays_date.getDate())
+if(localStorage.getItem("gold_rate_update_date")!=todays_date.getDate()){
+  alert("please update today's gold rate 10gm")
+  console.log(localStorage.getItem("gold_rate_update_date"),todays_date.getDate())
+}
+gold_rate_24k_button.addEventListener("click",()=>{
+
+  const gold_rate_24k_number=Number(gold_rate_24k.value);// input is string convert into number
+  localStorage.setItem("Daily_gold_rate_24k",gold_rate_24k_number)
+
+ 
+
+  if(gold_rate_24k.value.length!=5){
+    alert("rate format is not correct")
+    console.log(gold_rate_24k.length)
+    
+  }
+  else{
+  // date update daily in local storage when gold rate is update 
+  // idea- if date in local storage is not same as current date it mean this is diffrent day so 
+  // gold rate will update reminder will remind user
+    localStorage.setItem("gold_rate_update_date",todays_date.getDate())
+      const gold_rate_24k_obj_123={
+        "24k":gold_rate_24k_number,
+        "22k":Math.floor(gold_rate_24k_number*91.6/100),
+        "18k":Math.floor(gold_rate_24k_number*75/100),
+        }
+        // console.log(gold_rate_24k_number)
+  }
+
+})
+
+
+
+
+
+
 //popup part 1 ......................................................................
 // data entry window popup part creating
 
@@ -170,11 +232,15 @@ add_item_1.addEventListener('click', () => {
     div_details.innerText = details.value;
     div_type.innerText = type.value;
     div_weight.innerText = weight.value;
-    div_price.innerText = weight.value * 5000;
+
+
+    div_price.innerText =
+
+    
     div_making_charge.innerText = Math.floor(
       (making.value * weight.value * 5000) / 100
     );
-    div_add_on.innerText = making.value;
+    div_add_on.innerText = Math.floor( weight.value * 5000);
     div_total.innerText = total_price;
 
     //image part in data field

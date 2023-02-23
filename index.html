@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="data-field.css" />
     <link rel="stylesheet" href="head.css" />
     <link rel="stylesheet" href="popup.css" />
-
+    <link rel="stylesheet" href="total_calc.css" />
+    
+    <link rel="stylesheet" href="gold_rate_section.css" />
     <script type="module" src="script.js"></script>
   </head>
   <body>
@@ -50,6 +52,15 @@
 
 <hr>
 </div>
+<!-- gold rate -->
+<div id="gold_rate_section">
+<div><h3>Gold Rate</h3></div>
+<div><span>24k:</span><span id="gold_rate_24k_span"></span><span>/10g</span></div>
+<div><span>22k:</span><span id="gold_rate_22k_span"></span><span>/10g</span></div>
+<div><span>18k:</span><span id="gold_rate_18k_span"></span><span>/10g</span></div>
+<input type="number" placeholder="update gold rate daily" id="update_gold_rate24k">
+<button id="update_gold_rate24k_button">Update rate</button>
+</div>
 <!-- data -->
 <div>
 <div id="data-head" class="data-field-head">
@@ -59,14 +70,21 @@
 <div><h4>weight</h4></div>
 <div><h4>price</h4></div>
 <div><h4>m.c.</h4></div>
-<div><h4>add-on</h4></div>
+<div><h4>Amount</h4></div>
 <div><h4>Total</h4></div>
 
 </div>
 <div id="display" >
 
 </div>
+<div id="total_calculation">
+<div>
+  <div>discount <input type="number"></div>
+<div>Paid Amount : <span></span></div>
+<button>Print</button>
+</div>
 
+</div>
 
 
 

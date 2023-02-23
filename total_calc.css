@@ -1,0 +1,8 @@
+#total_calculation{
+  background-color: rgb(253, 252, 253);
+  min-height: 50px;
+ display: flex;
+ align-items: center;
+ justify-content: end;
+ padding: 5px;
+}
