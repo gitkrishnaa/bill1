@@ -261,7 +261,7 @@ else if(gold_type==18){
 function Amount_calculator_based_on_karet(gold_rate){
   const gold_rate_in_num=Number(gold_rate)
  const gold_rate_price=gold_rate_in_num;
-const making_charge= Math.floor((making.value*gold_rate_in_num/10*weight.value)/100)
+const making_charge= Math.floor((making.value*gold_rate_in_num/10*weight.value)/100)+Number(add_on.value)
 const amount_wt_X_rate=Math.floor((gold_rate_in_num* Number(weight.value))/10);
 
   const total_price=making_charge+amount_wt_X_rate
