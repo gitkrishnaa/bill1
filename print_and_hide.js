@@ -1,5 +1,7 @@
 const print_button=document.getElementById("print_hide");
 const shop_name=document.querySelector("#shop_name");
+const body=document.querySelector("body");
+
 
 // item to be hide
 const add_item_button=document.getElementById("add-item-1");
@@ -22,6 +24,9 @@ print_button.addEventListener("click",()=>{
 
     }
     print_button.style.display="none";
+    body.style.backgroundColor="white";
+
+
     print()
   }
   
