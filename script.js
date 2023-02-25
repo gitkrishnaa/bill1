@@ -213,11 +213,15 @@ add_item_1.addEventListener('click', () => {
  
   save1.addEventListener('click', () => {
 // if input fied is empty then alert
-if(weight.value==""&&weight.value==""&&weight.value==""&&details.value==""){
-  alert("details,weight, making, addon is empty")
+if(weight.value==""&&weight.value==""&&weight.value==""&&details.value==""&&front_image.value==""&&back_image.value==""){
+  alert("font and back image ,details,weight, making, addon is empty")
   return;
 }
 else{
+  if(back_image.value==""){
+    alert("back image is empty");
+    return;
+  }
   if(details.value==""){
     alert("details is empty");
     return;
