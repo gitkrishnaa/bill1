@@ -126,7 +126,7 @@ add_item_1.addEventListener('click', () => {
   var t = document.createTextNode('22');
   z.appendChild(t);
   var z1 = document.createElement('option');
-  var t1 = document.createTextNode('20');
+  var t1 = document.createTextNode('24');
   z1.appendChild(t1);
   var z2 = document.createElement('option');
   var t2 = document.createTextNode('18');
@@ -245,18 +245,34 @@ const gold_type=type.value;
 if(gold_type==24){
   // div_add_on.innerText = Math.floor( weight.value *Number(display_gold_rate_24k_span.innerText));
   Amount_calculator_based_on_karet(display_gold_rate_24k_span.innerText)
+  display_gold_rate_24k_span.style.backgroundColor="gold";
+  display_gold_rate_24k_span.style.padding="5px";
+  display_gold_rate_24k_span.style.borderRadius="5px";
+  display_gold_rate_24k_span.style.fontWeight="bold";
 }
 else if(gold_type==22){
   // div_add_on.innerText = Math.floor( weight.value *Number(display_gold_rate_22k_span.innerText));
-  Amount_calculator_based_on_karet(display_gold_rate_22k_span.innerText)
+  Amount_calculator_based_on_karet(display_gold_rate_22k_span.innerText);
+  display_gold_rate_22k_span.style.backgroundColor="gold";
+  display_gold_rate_22k_span.style.padding="5px";
+  display_gold_rate_22k_span.style.borderRadius="5px";
+  display_gold_rate_22k_span.style.fontWeight="bold";
+
 }
 else if(gold_type==20){
   // div_add_on.innerText = Math.floor( weight.value *Number(display_gold_rate_22k_span.innerText));
   Amount_calculator_based_on_karet(display_gold_rate_22k_span.innerText)
+  display_gold_rate_22k_span.style.backgroundColor="gold";
 }
 else if(gold_type==18){
   // div_add_on.innerText = Math.floor( weight.value *Number(display_gold_rate_18k_span.innerText));
   Amount_calculator_based_on_karet(display_gold_rate_18k_span.innerText)
+  display_gold_rate_18k_span.style.backgroundColor="gold";
+  display_gold_rate_18k_span.style.padding="5px";
+  display_gold_rate_18k_span.style.borderRadius="5px";
+  display_gold_rate_18k_span.style.fontWeight="bold";
+
+
 }
 function Amount_calculator_based_on_karet(gold_rate){
   const gold_rate_in_num=Number(gold_rate)
