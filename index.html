@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="total_calc.css" />
     
     <link rel="stylesheet" href="gold_rate_section.css" />
+  
+    <script type="module" src="date_update.js"></script>
+    <script type="module" src="print_and_hide.js"></script>
     <script type="module" src="script.js"></script>
   </head>
   <body>
@@ -28,9 +31,22 @@
 
 <div id="adress_and_customer_info">
 <div id="customer_info">
- <span><b>name:.................................................................................
+ <span><b>Name:XXX
    </b>
  </span>
+ <br>
+
+ <span><b>    Adress:
+</b>
+</span>
+
+<br>
+<span><b>Date:
+</b>
+</span>
+<span id="date_update"><b>today date
+</b>
+</span>
  <br>
 </div>
 <div id="div_adress">
@@ -58,17 +74,20 @@
 <div><span>24k:</span><span id="gold_rate_24k_span"></span><span>/10g</span></div>
 <div><span>22k:</span><span id="gold_rate_22k_span"></span><span>/10g</span></div>
 <div><span>18k:</span><span id="gold_rate_18k_span"></span><span>/10g</span></div>
+
+<span id="gold_input_button_hide">
 <input type="number" placeholder="update gold rate daily" id="update_gold_rate24k">
 <button id="update_gold_rate24k_button">Update rate</button>
+</span>
 </div>
 <!-- data -->
 <div>
 <div id="data-head" class="data-field-head">
 <div><h4>No.</h4></div>
-<div><h4>details</h4></div>
+<div><h4>Details</h4></div>
 <div><h4>type</h4></div>
-<div><h4>weight</h4></div>
-<div><h4>price</h4></div>
+<div><h4>Weight</h4></div>
+<div><h4>Price</h4></div>
 <div><h4>m.c.</h4></div>
 <div><h4>Amount</h4></div>
 <div><h4>Total</h4></div>
@@ -79,9 +98,9 @@
 </div>
 <div id="total_calculation">
 <div>
-  <div>discount <input type="number" id="final_discount"></div>
+  <div><span id="final_discount_hide"> discount <input type="number" id="final_discount"></span></div>
 <div>Paid Amount : <span id="all_total_amount"></span></div>
-<button>Print</button>
+<button id="print_hide">Print</button>
 </div>
 
 </div>
