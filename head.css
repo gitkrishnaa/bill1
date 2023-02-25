@@ -11,11 +11,15 @@ body{
 
 
 
-
-
 #shop_name{
+  color: gold;
   text-align: center;
-  font-size:40px
+  font-size:40px;
+  background-color: red;
+  padding: 10px;
+  border-bottom: 2px solid black;
+  
+  
 }
 #shop_website{
   text-align: center;
@@ -32,7 +36,10 @@ body{
   padding-top: 20px;
 }
 #customer_info{
-  width: 70%;
+  display: flex;
+  
+  align-items: center;
+  width: 35%;
   border: 2px solid black;
   box-sizing: border-box;
   padding: 10px;
@@ -43,7 +50,22 @@ body{
   
 }
 #div_adress{
-  width: 30%;
+  width: 35%;
   border: 2px solid black;
   box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bis_logo_div{
+  height: 100px;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+
+}
+#bis_logo_img{
+  height: 90px;
+  text-align: center;
 }

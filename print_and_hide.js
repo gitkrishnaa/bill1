@@ -1,12 +1,6 @@
 const print_button=document.getElementById("print_hide");
-const body=document.querySelector("#shop_name");
-body.addEventListener("click",()=>{
-  add_item_button.style.display="block";
-  gold_input_button_hide.style.display="inline";
-  final_discount.style.border="1px solid black"
-  final_discount_text_input_both_field.style.display="block";
-  print_button.style.display="block"
-})
+const shop_name=document.querySelector("#shop_name");
+
 // item to be hide
 const add_item_button=document.getElementById("add-item-1");
 
@@ -22,8 +16,8 @@ print_button.addEventListener("click",()=>{
     add_item_button.style.display="none";
     gold_input_button_hide.style.display="none";
     final_discount.style.border="none"
-    if(final_discount.innerText==""){
-      // console.log(final_discount.innerText,"discount")
+    if(final_discount.value==""){
+      console.log(final_discount.innerText,"discount")
       final_discount_text_input_both_field.style.display="none";
 
     }
@@ -31,4 +25,11 @@ print_button.addEventListener("click",()=>{
     print()
   }
   
+})
+shop_name.addEventListener("click",()=>{
+  add_item_button.style.display="block";
+  gold_input_button_hide.style.display="inline";
+  final_discount.style.border="1px solid black"
+  final_discount_text_input_both_field.style.display="block";
+  print_button.style.display="block"
 })
