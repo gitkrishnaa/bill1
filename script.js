@@ -70,8 +70,8 @@ gold_rate_24k_button.addEventListener("click",()=>{
         }
         // console.log(gold_rate_24k_number)
         display_gold_rate_24k_span.innerText=Number(localStorage.getItem("Daily_gold_rate_24k"))
-        display_gold_rate_22k_span.innerText=Math.floor(Number(localStorage.getItem("Daily_gold_rate_24k"))*91.6/100)
-        display_gold_rate_18k_span.innerText=Math.floor(Number(localStorage.getItem("Daily_gold_rate_24k"))*75/100)
+        display_gold_rate_22k_span.innerText=Math.floor(Number(localStorage.getItem("Daily_gold_rate_24k"))*91.6/100);
+        display_gold_rate_18k_span.innerText=Math.floor(Number(localStorage.getItem("Daily_gold_rate_24k"))*75/100);
   }
 
 })
@@ -137,11 +137,17 @@ add_item_1.addEventListener('click', () => {
 
   const weight = document.createElement('input');
   weight.id = 'weight1';
+  weight.setAttribute('type', 'number');
 
   const making = document.createElement('input');
   making.id = 'making';
+  making.setAttribute('type', 'number');
   const add_on = document.createElement('input');
   add_on.id = 'add_on1';
+  add_on.setAttribute('type', 'number');
+
+
+
 
   const front_image_text = document.createElement('p');
   const back_image_text = document.createElement('p');
@@ -206,6 +212,33 @@ add_item_1.addEventListener('click', () => {
   // popup part>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  
   save1.addEventListener('click', () => {
+// if input fied is empty then alert
+if(weight.value==""&&weight.value==""&&weight.value==""&&details.value==""){
+  alert("details,weight, making, addon is empty")
+  return;
+}
+else{
+  if(details.value==""){
+    alert("details is empty");
+    return;
+  }
+if(weight.value==""){
+  alert("weight is empty");
+  return;
+}
+if(making.value==""){
+  alert("making is empty");
+  return;
+}
+if(add_on.value==""){
+  alert("add_on is empty");
+  return;
+}
+}
+
+
+///////////////////
+
     const display = document.getElementById('display');
     // window1.style.visibility="hidden"
     const div_main = document.createElement('div');
