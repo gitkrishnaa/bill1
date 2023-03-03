@@ -63,7 +63,7 @@ body{
   width: 30%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items:center;
   background-color: blueviolet;
   margin-bottom: 20px;
 text-align: center;
