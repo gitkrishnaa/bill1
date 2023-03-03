@@ -64,7 +64,7 @@ body{
   display: flex;
   justify-content: center;
   align-items:center;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   margin-bottom: 20px;
 text-align: center;
 }
