@@ -12,7 +12,7 @@ body{
 
 
 #shop_name{
-  color: gold;
+  color: yellow;
   text-align: center;
   font-size:40px;
   background-color: red;
@@ -26,7 +26,7 @@ body{
   margin-bottom: 10px;
   /* border: 1px solid gold; */
   background-color: red;
-  color: rgb(255, 219, 15);
+  color: yellow;
   font-size: 20px;
   padding: 5px;
 }
