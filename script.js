@@ -35,8 +35,8 @@ if(localStorage.getItem("Daily_gold_rate_24k")==undefined){
 }
 else{
   display_gold_rate_24k_span.innerText=Number(localStorage.getItem("Daily_gold_rate_24k"))
-  display_gold_rate_22k_span.innerText=Number(localStorage.getItem("Daily_gold_rate_24k"))*91.6/100
-  display_gold_rate_18k_span.innerText=Number(localStorage.getItem("Daily_gold_rate_24k"))*75/100
+  display_gold_rate_22k_span.innerText=Math.floor(Number(localStorage.getItem("Daily_gold_rate_24k"))*91.6/100)
+  display_gold_rate_18k_span.innerText=Math.floor(Number(localStorage.getItem("Daily_gold_rate_24k"))*75/100)
 }
 
 
